@@ -139,7 +139,6 @@ Module.register('MMM-CalendarExt3', {
   },
   
   notificationReceived: function(notification, payload, sender) {
-    console.info('NOTI:', notification)
     if (notification === this.notifications.eventNotification) {
       let conveertedPayload = this.notifications.eventPayload(payload)
       if (this?.storedEvents?.length == 0 && payload.length > 0) {
@@ -152,7 +151,7 @@ Module.register('MMM-CalendarExt3', {
       }
     }
 
-    if (notification === 'MODULE_DOM_CREATED') {
+    if (notification === 'DOM_OBJECTS_CREATED') {
       this._domReady()
     }
     
